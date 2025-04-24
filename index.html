@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏠 Control de Cuartos - Internado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.jpg" alt="Logo Universidad" class="logo">
+    <h1>🏠 Control de Cuartos - Internado</h1>
+  </header>
+
+  <main>
+    <section id="cuartos">
+      <h2>Cuartos Disponibles</h2>
+      <div id="cuartos-container"></div>
+      <button onclick="mostrarFormularioAgregar()">+ Agregar Cuarto</button>
+    </section>
+
+    <!-- Formulario para agregar cuarto -->
+    <div id="formulario-agregar" style="display: none;">
+      <h3>Agregar / Editar Cuarto</h3>
+      <form onsubmit="event.preventDefault(); agregarCuarto();">
+        <label for="nuevoNombre">Nombre del Cuarto:</label>
+        <input type="text" id="nuevoNombre" name="nuevoNombre" placeholder="Nombre del cuarto" required>
+
+        <label for="nuevasCamas">Cantidad de Camas:</label>
+        <input type="number" id="nuevasCamas" name="nuevasCamas" placeholder="Número de camas" required min="1">
+
+        <button type="submit">Guardar</button>
+        <button type="button" onclick="ocultarFormularioAgregar()">Cancelar</button>
+      </form>
+    </div>
+
+    <!-- Resumen de la ocupación -->
+    <section id="resumen">
+      <h2>Resumen de Ocupación</h2>
+      <div id="resumen-container"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
